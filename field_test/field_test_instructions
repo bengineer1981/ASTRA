@@ -1,0 +1,6 @@
+run gnuradio
+capture audio using recording script
+open octave
+run addpath("/home/ben/gnuradio/gr-utils/octave") to load in read_float_binary
+test read_float_binary
+

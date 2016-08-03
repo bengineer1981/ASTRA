@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+
+<block>
+  <name>xcorr_ts_ff</name>
+  <key>astra_xcorr_ts_ff</key>
+  <category>astra</category>
+  <import>import astra</import>
+  <make>astra.xcorr_ts_ff($samp_window,$samp_rate,$node_number,$ip_address,$port_num$center_mic_offset)</make>
+
+  <param>
+    <name>node number</name>
+    <key>node_number</key>
+	<value>1</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>IP address</name>
+    <key>ip_address</key>
+	<value>127.0.0.1</value>
+    <type>string</type>
+  </param>
+  <param>
+    <name>port number</name>
+    <key>port_num</key>
+	<value>5555</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>sampling window</name>
+    <key>samp_window</key>
+	<value>5000</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>sample rate</name>
+    <key>samp_rate</key>
+	<value>samp_rate</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>cntr mic offset</name>
+    <key>center_mic_offset</key>
+	<value>center_mic_offset</value>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>trigger</name>
+    <type>float</type>
+  </sink>
+  <sink>
+    <name>in1</name>
+    <type>float</type>
+  </sink>
+  <sink>
+    <name>in2</name>
+    <type>float</type>
+  </sink>
+  <sink>
+    <name>in3</name>
+    <type>float</type>
+  </sink>
+  <sink>
+    <name>in4</name>
+    <type>float</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>float</type>
+  </source>
+</block>

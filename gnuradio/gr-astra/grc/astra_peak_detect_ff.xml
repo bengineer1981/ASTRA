@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<block>
+  <name>peak_detect_ff</name>
+  <key>astra_peak_detect_ff</key>
+  <category>astra</category>
+  <import>import astra</import>
+  <make>astra.peak_detect_ff($thresh)</make>
+  <param>
+    <name>threshold</name>
+    <key>thresh</key>
+	<value>100</value>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>float</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>float</type>
+  </source>
+</block>

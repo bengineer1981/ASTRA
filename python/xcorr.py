@@ -125,9 +125,10 @@ def xcorr(mic1_detector, mic2_locator, mic3_locator, mic4_locator):
     plt.plot(xcorr3)
     plt.ylabel('xcorr3')
     # if (lag1 or lag2 or lag3) > 100:
-    lag1 = lag1-100
-    lag2 = lag2-100
-    lag3 = lag3-100
+    center_mic_offset = 64
+    lag1 = lag1-center_mic_offset
+    lag2 = lag2-center_mic_offset
+    lag3 = lag3-center_mic_offset
     lags = [lag1,lag2,lag3]
     return lags
 
@@ -138,22 +139,22 @@ def angler(lags):
     elem_dist = 0.5 #meters
     #sampling rate
     fs = 44100.0 #samps/sec
-    third_mic = lags.index([max(lags)]),int(math.fabs(max(lags)))
-    print third_mic
+    third_mic = lags.index([max(lags)]), int(max(lags))
+    print "third mic w/o abs val: ", third_mic
     lags[third_mic[0]] = -99999
-    second_mic = lags.index([max(lags)]),int(math.fabs(max(lags)))
-    print second_mic
+    second_mic = lags.index([max(lags)]), int(max(lags))
+    print "second mic w/o abs val: ", second_mic
     lags[second_mic[0]] = -99999
-    first_mic= lags.index([max(lags)]),int(math.fabs(max(lags)))
-    print first_mic
+    first_mic = lags.index([max(lags)]), int(max(lags))
+    print "first mic w/o abs val: ", first_mic
     lags[first_mic[0]] = -99999
     print 'first mic to receive hit is: ',first_mic[0]+2
     print 'second mic to receive hit is: ',second_mic[0]+2
     print 'third mic to receive hit is: ',third_mic[0]+2
     print "first_mic[1]: ",first_mic[1]
-    print "taking abs val of all mics for calcualtion purposes"
+    print "taking abs val of all mics for calculation purposes"
     print 'first mic abs val: ',first_mic[1]
-    t_delay = first_mic[1]/fs
+    t_delay = math.fabs(first_mic[1])/fs
     print "t_delay is: ",t_delay
     print "distance (x = c*t_delay) is: ",c*t_delay
     theta = math.degrees(math.acos((c*t_delay)/elem_dist))

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="api_8h" kind="file">
+    <compoundname>api.h</compoundname>
+    <includes local="no">gnuradio/attributes.h</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>gnuradio/attributes.h</label>
+      </node>
+      <node id="7">
+        <label>api.h</label>
+        <link refid="api.h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="api_8h_1a92d0a0e290468c38d80b0a14f40ac7ad" prot="public" static="no">
+        <name>ASTRA_API</name>
+        <initializer>__GR_ATTR_IMPORT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ben/Desktop/senior_design/gnuradio/gr-astra/include/astra/api.h" line="30" column="12" bodyfile="/home/ben/Desktop/senior_design/gnuradio/gr-astra/include/astra/api.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/ben/Desktop/senior_design/gnuradio/gr-astra/include/astra/api.h"/>
+  </compounddef>
+</doxygen>

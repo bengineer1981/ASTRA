@@ -1,10 +1,10 @@
-shot_bin = read_float_binary("/home/ben/Desktop/senior_design/field_test/audio_recordings/ar15_youtube");
-shot = shot_bin(1443500:1446500);
+shot_bin = 9.5.*read_float_binary("/home/ben/Desktop/senior_design/field_test/audio_recordings/clap");
+shot = shot_bin(1285800:1295500);
 shot_lin = transpose(shot);
 shot_match_filt = fliplr(shot_lin);
 sens_input = read_float_binary("ar15_crowd_shot");
 sens_out = conv(sens_input,shot_match_filt);
-csvwrite("/home/ben/Desktop//senior_design/field_test/taps/ar15_youtube.txt",shot_match_filt)
+csvwrite("/home/ben/Desktop//senior_design/field_test/taps/clap.txt",shot_match_filt)
 (fliplr(shot_lin))(1:6)
 shot_match_filt(1:6)
 size(shot_bin)

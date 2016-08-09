@@ -20,25 +20,24 @@
     <favorites_list name="python" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="xcorr_ts_ff.py" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="xcorr_ts_ff.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xcorr_ts_ff.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+            <state relative-caret-position="-3109">
+              <caret line="94" column="33" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
               <folding>
-                <element signature="e#795#805#0" expanded="true" />
                 <element signature="e#2001#2046#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xcorr.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Desktop/senior_design/python/xcorr.py">
+      <file leaf-file-name="xcorr.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../../../python/xcorr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="157" column="0" selection-start-line="156" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
+            <state relative-caret-position="522">
+              <caret line="119" column="20" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -54,8 +53,8 @@
         <option value="$PROJECT_DIR$/../../../python_code/xcorr.py" />
         <option value="$PROJECT_DIR$/../../../python_code/udp_server.py" />
         <option value="$PROJECT_DIR$/../../../python_code/udp_client.py" />
-        <option value="$USER_HOME$/Desktop/senior_design/python/xcorr.py" />
         <option value="$PROJECT_DIR$/xcorr_ts_ff.py" />
+        <option value="$PROJECT_DIR$/../../../python/xcorr.py" />
       </list>
     </option>
   </component>
@@ -90,8 +89,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -117,7 +116,7 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/senior_design/python/xcorr.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../python/xcorr.py" />
     <property name="SearchEverywhereHistoryKey" value="trigger_index&#9;null&#9;null" />
   </component>
   <component name="RunManager" selected="Python.xcorr">
@@ -133,7 +132,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="python" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/Desktop/senior_design/python/xcorr.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../python/xcorr.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -179,12 +178,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Desktop/senior_design/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../python" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="python" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/Desktop/senior_design/python/xcorr.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../python/xcorr.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -424,6 +423,42 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/xcorr_ts_ff.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#2001#2046#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../python/xcorr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1404">
+          <caret line="84" column="30" selection-start-line="84" selection-start-column="30" selection-end-line="84" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xcorr_ts_ff.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#2001#2046#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../python/xcorr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2718">
+          <caret line="157" column="0" selection-start-line="156" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/peak_detect_ff.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -436,13 +471,12 @@
         <state relative-caret-position="2628">
           <caret line="176" column="30" selection-start-line="176" selection-start-column="30" selection-end-line="176" selection-end-column="30" />
           <folding>
-            <element signature="e#795#805#0" expanded="true" />
             <element signature="e#2001#2046#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/senior_design/python/xcorr.py">
+    <entry file="file://$PROJECT_DIR$/../../../python/xcorr.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -462,13 +496,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#795#805#0" expanded="true" />
             <element signature="e#2001#2046#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/senior_design/python/xcorr.py">
+    <entry file="file://$PROJECT_DIR$/../../../python/xcorr.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -488,7 +521,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#795#805#0" expanded="true" />
             <element signature="e#2001#2046#0" expanded="false" />
           </folding>
         </state>
@@ -506,7 +538,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#795#805#0" expanded="true" />
             <element signature="e#2001#2046#0" expanded="false" />
           </folding>
         </state>
@@ -527,7 +558,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#795#805#0" expanded="true" />
             <element signature="e#2001#2046#0" expanded="false" />
           </folding>
         </state>
@@ -578,22 +608,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/senior_design/python/xcorr.py">
+    <entry file="file://$PROJECT_DIR$/xcorr_ts_ff.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="157" column="0" selection-start-line="156" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="-3109">
+          <caret line="94" column="33" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
+          <folding>
+            <element signature="e#2001#2046#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xcorr_ts_ff.py">
+    <entry file="file://$PROJECT_DIR$/../../../python/xcorr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-          <folding>
-            <element signature="e#795#805#0" expanded="true" />
-            <element signature="e#2001#2046#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="522">
+          <caret line="119" column="20" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>

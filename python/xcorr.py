@@ -9,7 +9,10 @@ import os
 import matplotlib.pyplot as plt
 
 def get_streams_from_files():
-    with open("/home/ben/Desktop/senior_design/gnuradio/data_files/in1file.csv",'rb') as f1:
+#for gnuradio output file
+    with open('/home/ben/Desktop/senior_design/gnuradio/data_files/in1file.csv', 'rb') as f1:
+#for matlab output file
+    #with open("/home/ben/Desktop/senior_design/gnuradio/data_files/stream1.csv",'rb') as f1:
         reader = csv.reader(f1)
         in1 = []
         for row in reader:
@@ -19,7 +22,10 @@ def get_streams_from_files():
                 in1.append(num)
         print len(in1)
 
-    with open("/home/ben/Desktop/senior_design/gnuradio/data_files/in2file.csv", 'rb') as f2:
+# for gnuradio output file
+    with open('/home/ben/Desktop/senior_design/gnuradio/data_files/in2file.csv', 'rb') as f2:
+# for matlab output file
+    #with open("/home/ben/Desktop/senior_design/gnuradio/data_files/stream2.csv", 'rb') as f2:
         reader = csv.reader(f2)
         in2 = []
         for row in reader:
@@ -29,7 +35,10 @@ def get_streams_from_files():
                 in2.append(num)
         print len(in2)
 
-    with open("/home/ben/Desktop/senior_design/gnuradio/data_files/in3file.csv", 'rb') as f3:
+# for gnuradio output file
+    with open('/home/ben/Desktop/senior_design/gnuradio/data_files/in3file.csv', 'rb') as f3:
+#  for matlab output file
+    #with open("/home/ben/Desktop/senior_design/gnuradio/data_files/stream3.csv", 'rb') as f3:
         reader = csv.reader(f3)
         in3 = []
         for row in reader:
@@ -39,7 +48,10 @@ def get_streams_from_files():
                 in3.append(num)
         print len(in3)
 
-    with open("/home/ben/Desktop/senior_design/gnuradio/data_files/in4file.csv", 'rb') as f4:
+# for gnuradio output file
+    with open('/home/ben/Desktop/senior_design/gnuradio/data_files/in4file.csv', 'rb') as f4:
+# for matlab output file
+    #with open("/home/ben/Desktop/senior_design/gnuradio/data_files/stream4.csv", 'rb') as f4:
         reader = csv.reader(f4)
         in4 = []
         for row in reader:
@@ -57,7 +69,7 @@ def xcorr(mic1_detector, mic2_locator, mic3_locator, mic4_locator):
     mxind0 = numpy.where(autocorr == max(autocorr))
     mxind0 = mxind0[0][0]
     middle = mxind0
-    print 'location of initial detection is: ', mxind0
+    print 'location of initial detection is: ', middle
     print "len autocorr: ", len(autocorr)
     plt.figure(5)
     plt.plot(autocorr)
@@ -65,14 +77,9 @@ def xcorr(mic1_detector, mic2_locator, mic3_locator, mic4_locator):
     xcorr1 = numpy.correlate(mic1_detector, mic2_locator, "same")
     mxind1 = numpy.where(xcorr1 == max(xcorr1))
     mxind1 = mxind1[0][0]
-    if mxind1 < middle:
-        lag1 = middle - mxind1
-    elif mxind1 > middle:
-        lag1 = mxind1 - middle
-    elif mxind1 == middle:
-        lag1 = mxind1 - middle
-    else:
-        print "something is wrong in xcorr1"
+    print 'mxind1 is: ',mxind1
+    print 'middle', middle
+    lag1 = middle - mxind1
     print "len xcorr1: ", len(xcorr1)
     print "lag1: ", lag1
 
@@ -80,15 +87,8 @@ def xcorr(mic1_detector, mic2_locator, mic3_locator, mic4_locator):
     xcorr2 = numpy.correlate(mic1_detector, mic3_locator, "same")
     mxind2 = numpy.where(xcorr2 == max(xcorr2))
     mxind2 = mxind2[0][0]
-
-    if mxind2 < middle:
-        lag2 = middle - mxind2
-    elif mxind2 > middle:
-        lag2 = mxind2 - middle
-    elif mxind1 == middle:
-        lag2 = mxind2 - middle
-    else:
-        print "something is wrong in xcorr2"
+    print 'mxind2 is: ', mxind2
+    lag2 = middle - mxind2
     print "len xcorr2: ", len(xcorr2)
     print "lag2: ", lag2
 
@@ -96,36 +96,33 @@ def xcorr(mic1_detector, mic2_locator, mic3_locator, mic4_locator):
     xcorr3 = numpy.correlate(mic1_detector, mic4_locator, "same")
     mxind3 = numpy.where(xcorr3 == max(xcorr3))
     mxind3 = mxind3[0][0]
-
-    if mxind3 < middle:
-        lag3 = middle - mxind3
-    elif mxind3 > middle:
-        lag3 = mxind3 - middle
-    elif mxind3 == middle:
-        lag3 = mxind3 - middle
-    else:
-        print "something is wrong in xcorr3"
+    print 'mxind3 is: ', mxind3
+    lag3 = middle - mxind3
     print "len xcorr3: ", len(xcorr3)
     print "lag3: ", lag3
 
     plt.figure(2)
     plt.subplot(411)
     plt.plot(autocorr)
+    plt.plot(numpy.argmax(autocorr), max(autocorr), '-rD')
     plt.ylabel('autocorr')
 
     plt.subplot(412)
     plt.plot(xcorr1)
+    plt.plot(numpy.argmax(xcorr1), max(xcorr1), '-bD')
     plt.ylabel('xcorr1')
 
     plt.subplot(413)
     plt.plot(xcorr2)
+    plt.plot(numpy.argmax(xcorr2), max(xcorr2), '-gD')
     plt.ylabel('xcorr2')
 
     plt.subplot(414)
     plt.plot(xcorr3)
+    plt.plot(numpy.argmax(xcorr3), max(xcorr3), '-yD')
     plt.ylabel('xcorr3')
     # if (lag1 or lag2 or lag3) > 100:
-    center_mic_offset = 64
+    center_mic_offset = 0
     lag1 = lag1-center_mic_offset
     lag2 = lag2-center_mic_offset
     lag3 = lag3-center_mic_offset
@@ -135,7 +132,7 @@ def xcorr(mic1_detector, mic2_locator, mic3_locator, mic4_locator):
 def angler(lags):
     print 'lags in angler', lags
     #speed of sound
-    c = 343 #m/s
+    c = 340 #m/s
     elem_dist = 0.5 #meters
     #sampling rate
     fs = 44100.0 #samps/sec
@@ -152,8 +149,8 @@ def angler(lags):
     print 'second mic to receive hit is: ',second_mic[0]+2
     print 'third mic to receive hit is: ',third_mic[0]+2
     print "first_mic[1]: ",first_mic[1]
-    print "taking abs val of all mics for calculation purposes"
-    print 'first mic abs val: ',first_mic[1]
+    print "taking abs val of first mic for calculation purposes"
+    print 'first mic abs val: ',math.fabs(first_mic[1])
     t_delay = math.fabs(first_mic[1])/fs
     print "t_delay is: ",t_delay
     print "distance (x = c*t_delay) is: ",c*t_delay
@@ -237,7 +234,7 @@ def plot_more_stuff(theta):
     ax.annotate('mic3', xy=(0, 0), xytext=(mic3, 125))
     ax.annotate('mic4', xy=(0, 0), xytext=(mic4, 150))
     ax.annotate(('vector to source:\n %f degrees' % math.degrees(theta)),xy = (0,0),xytext=(theta-25,300))
-    plt.show()
+
 
 ##################################################
 #--------------------MAIN------------------------#
@@ -253,7 +250,7 @@ elem_num_and_theta = angler(result) #result = lags
 plot_stuff(ins[0],ins[1],ins[2],ins[3])
 theta = elem_num_and_theta[1]
 plot_more_stuff(theta)
-
+plt.show()
 
 
 

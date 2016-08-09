@@ -124,7 +124,7 @@
     </param>
     <param>
       <key>device_name</key>
-      <value>plughw:2,0</value>
+      <value>plughw:1,0</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -561,7 +561,7 @@
     </param>
     <param>
       <key>size</key>
-      <value>1024</value>
+      <value>1024*200</value>
     </param>
     <param>
       <key>srate</key>
@@ -920,7 +920,7 @@
     </param>
     <param>
       <key>size</key>
-      <value>1024</value>
+      <value>1024*200</value>
     </param>
     <param>
       <key>srate</key>
@@ -1003,7 +1003,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -1279,7 +1279,7 @@
     </param>
     <param>
       <key>size</key>
-      <value>1024</value>
+      <value>1024*200</value>
     </param>
     <param>
       <key>srate</key>
@@ -1362,7 +1362,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -1638,7 +1638,7 @@
     </param>
     <param>
       <key>size</key>
-      <value>1024</value>
+      <value>1024*200</value>
     </param>
     <param>
       <key>srate</key>

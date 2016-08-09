@@ -30,7 +30,7 @@ class xcorr_ts_ff(gr.sync_block):
     """
     docstring for block xcorr_ts_ff
     """
-    def __init__(self,samp_window,samp_rate,node_number,ip_addr,port_num,center_mic_offset):
+    def __init__(self,samp_window,samp_rate,node_number,ip_addr,port_num,center_mic_offset,mic_distance):
         gr.sync_block.__init__(self,
             name="xcorr_ts_ff",
             in_sig=[numpy.float32,numpy.float32,numpy.float32,numpy.float32,numpy.float32],
@@ -55,6 +55,7 @@ class xcorr_ts_ff(gr.sync_block):
         self.ip_address = ip_addr
         self.port_num = port_num
         self.center_mic_offset = center_mic_offset
+        self.mic_distance = mic_distance
 
     # def tracker(self, trig_in,in1,in2,in3,in4):
     #     if len(self.trig_in_tracker) == 0:
@@ -92,7 +93,7 @@ class xcorr_ts_ff(gr.sync_block):
         print 'lags in angler', lags
         # speed of sound
         c = 343  # m/s
-        elem_dist = 0.5  # meters
+        elem_dist = self.mic_distance  # meters
         # sampling rate
         fs = 44100.0  # samps/sec
         third_mic = lags.index([max(lags)]), int(max(lags))
@@ -104,7 +105,7 @@ class xcorr_ts_ff(gr.sync_block):
         first_mic = lags.index([max(lags)]), int(max(lags))
         print "first mic w/o abs val: ",first_mic
         lags[first_mic[0]] = -99999
-        print 'first mic to receive hit is yada yada yada: ', first_mic[0] + 2
+        print 'first mic to receive hit is: ', first_mic[0] + 2
         print 'second mic to receive hit is: ', second_mic[0] + 2
         print 'third mic to receive hit is: ', third_mic[0] + 2
         t_delay = math.fabs(first_mic[1]) / fs
@@ -138,54 +139,43 @@ class xcorr_ts_ff(gr.sync_block):
         mxind0 = numpy.where(autocorr == max(autocorr))
         mxind0 = mxind0[0][0]
         middle = mxind0
+        print "ch-ch-ch-ch-ch-changes"
         print 'location of initial detection is: ', mxind0
         print "len autocorr: ", len(autocorr)
+
         #cross correlate detector with element 2
-        xcorr1 = numpy.correlate(mic1_detector, mic2_locator,"same")
-        mxind1 = numpy.where(xcorr1==max(xcorr1))
+        xcorr1 = numpy.correlate(mic1_detector, mic2_locator, "same")
+        mxind1 = numpy.where(xcorr1 == max(xcorr1))
         mxind1 = mxind1[0][0]
-        if mxind1 < middle:
-            lag1 = middle-mxind1-self.center_mic_offset
-        elif mxind1 > middle:
-            lag1 = mxind1-middle-self.center_mic_offset
-        elif mxind1 == middle:
-            lag1 = mxind1-middle-self.center_mic_offset
-        else:
-            print "something is wrong in xcorr1"
+        print 'mxind1 is: ', mxind1
+        print 'middle', middle
+        lag1 = middle - mxind1
         print "len xcorr1: ", len(xcorr1)
         print "lag1: ",lag1
+        #lag1 = self.center_mic_offset - lag1
+        print 'lag1 after delay compensation: ',lag1
 
         # cross correlate detector with element 3
         xcorr2 = numpy.correlate(mic1_detector, mic3_locator, "same")
         mxind2 = numpy.where(xcorr2 == max(xcorr2))
         mxind2 = mxind2[0][0]
-
-        if mxind2 < middle:
-            lag2 = middle - mxind2-self.center_mic_offset
-        elif mxind2 > middle:
-            lag2 = mxind2 - middle-self.center_mic_offset
-        elif mxind1 == middle:
-            lag2 = mxind2 - middle-self.center_mic_offset
-        else:
-            print "something is wrong in xcorr2"
+        print 'mxind2 is: ', mxind2
+        lag2 = middle - mxind2
         print "len xcorr2: ", len(xcorr2)
         print "lag2: ", lag2
+        #lag2 = self.center_mic_offset - lag2
+        print 'lag1 after delay compensation: ',lag2
 
         # cross correlate detector with element 4
         xcorr3 = numpy.correlate(mic1_detector, mic4_locator, "same")
         mxind3 = numpy.where(xcorr3 == max(xcorr3))
         mxind3 = mxind3[0][0]
-
-        if mxind3 < middle:
-            lag3 = middle - mxind3-self.center_mic_offset
-        elif mxind3 > middle:
-            lag3 = mxind3 - middle-self.center_mic_offset
-        elif mxind3 == middle:
-            lag3 = mxind3 - middle-self.center_mic_offset
-        else:
-            print "something is wrong in xcorr3"
+        print 'mxind3 is: ', mxind3
+        lag3 = middle - mxind3
         print "len xcorr3: ", len(xcorr3)
         print "lag3: ", lag3
+        #lag3 = self.center_mic_offset - lag3
+        print 'lag1 after delay compensation: ',lag3
         lags = [lag1,lag2,lag3]
         self.angler(lags)
 

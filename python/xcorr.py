@@ -8,9 +8,9 @@ import sys
 import os
 import matplotlib.pyplot as plt
 
-def get_streams_from_files():
+def get_streams_from_files(test_number):
 #for gnuradio output file
-    with open('/home/ben/Desktop/senior_design/gnuradio/data_files/in1file.csv', 'rb') as f1:
+    with open('/home/ben/Desktop/senior_design/gnuradio/data_files/in1file%s.csv' % test_number, 'rb') as f1:
 #for matlab output file
     #with open("/home/ben/Desktop/senior_design/gnuradio/data_files/stream1.csv",'rb') as f1:
         reader = csv.reader(f1)
@@ -23,7 +23,7 @@ def get_streams_from_files():
         print len(in1)
 
 # for gnuradio output file
-    with open('/home/ben/Desktop/senior_design/gnuradio/data_files/in2file.csv', 'rb') as f2:
+    with open('/home/ben/Desktop/senior_design/gnuradio/data_files/in2file%s.csv' % test_number, 'rb') as f2:
 # for matlab output file
     #with open("/home/ben/Desktop/senior_design/gnuradio/data_files/stream2.csv", 'rb') as f2:
         reader = csv.reader(f2)
@@ -36,7 +36,7 @@ def get_streams_from_files():
         print len(in2)
 
 # for gnuradio output file
-    with open('/home/ben/Desktop/senior_design/gnuradio/data_files/in3file.csv', 'rb') as f3:
+    with open('/home/ben/Desktop/senior_design/gnuradio/data_files/in3file%s.csv' % test_number, 'rb') as f3:
 #  for matlab output file
     #with open("/home/ben/Desktop/senior_design/gnuradio/data_files/stream3.csv", 'rb') as f3:
         reader = csv.reader(f3)
@@ -49,7 +49,7 @@ def get_streams_from_files():
         print len(in3)
 
 # for gnuradio output file
-    with open('/home/ben/Desktop/senior_design/gnuradio/data_files/in4file.csv', 'rb') as f4:
+    with open('/home/ben/Desktop/senior_design/gnuradio/data_files/in4file%s.csv' % test_number, 'rb') as f4:
 # for matlab output file
     #with open("/home/ben/Desktop/senior_design/gnuradio/data_files/stream4.csv", 'rb') as f4:
         reader = csv.reader(f4)
@@ -129,11 +129,11 @@ def xcorr(mic1_detector, mic2_locator, mic3_locator, mic4_locator):
     lags = [lag1,lag2,lag3]
     return lags
 
-def angler(lags):
+def angler(lags,mic_dist):
     print 'lags in angler', lags
     #speed of sound
-    c = 340 #m/s
-    elem_dist = 0.5 #meters
+    c = 343 #m/s
+    elem_dist = mic_dist #meters
     #sampling rate
     fs = 44100.0 #samps/sec
     third_mic = lags.index([max(lags)]), int(max(lags))
@@ -241,12 +241,13 @@ def plot_more_stuff(theta):
 ##################################################
 
 
-
-ins = get_streams_from_files()
+test_number = raw_input('enter test number to analyze: ')
+mic_dist = float(raw_input('enter mic_dist: '))
+ins = get_streams_from_files(test_number)
 #cross_correlate all inputs with in1 and get back lags
 result = xcorr(ins[0],ins[1],ins[2],ins[3])
 #calculate angle of arrival and first_element to receive signal
-elem_num_and_theta = angler(result) #result = lags
+elem_num_and_theta = angler(result,mic_dist) #result = lags
 plot_stuff(ins[0],ins[1],ins[2],ins[3])
 theta = elem_num_and_theta[1]
 plot_more_stuff(theta)

@@ -10,7 +10,7 @@ import os
 
 
 #function to plot based on received information
-def plot_more_stuff(theta,node_num):
+def plot_more_stuff(theta,node_num,test_num):
     theta = math.radians(theta)
     # # Polar plotting
     fig = plt.figure(node_num)  # Size
@@ -35,6 +35,9 @@ def plot_more_stuff(theta,node_num):
     ax.annotate('mic4', xy=(0, 0), xytext=(mic4, 150))
     ax.annotate(('vector to source:\n %f degrees' % math.degrees(theta)),xy = (0,0),xytext=(theta-25,300))
     ax.annotate('plot for node number: %d' % node_num, xy=(0, 0), xytext=(100,300))
+    ax.annotate('plot for test number: %s' % test_num, xy=(0, 0), xytext=(100,280))
+    print 'saving plot'
+    plt.savefig('/home/ben/Desktop/senior_design/field_test/plots/%s.png' % test_num)
 
 def reformat(msgs):
     node_count = 0
@@ -55,24 +58,31 @@ def reformat(msgs):
                 count -= 1
         word = ''.join(word)
         message_lst.append(word[:])
-        message_lst = [float(message_lst[0]), float(message_lst[1]), int(message_lst[2])]
+        message_lst = [float(message_lst[0]), float(message_lst[1]), int(message_lst[2]),message_lst[3]]
         # print 'converted message_lst: ',message_lst
+        test_num = message_lst[3]
         node_num = message_lst[2]
         shot_time = message_lst[0]
         theta = message_lst[1]
         # show user the metrics received from a node (timestamp, node number, shot direction
         print "time of shot: ", shot_time
+        print 'test number: ', test_num        
         print "node number: ", node_num
         node_count += 1
         print "direction of shot: %f degrees counterclockwise from north" % theta
         print 'node count: ', node_count
         # send data received from node
-        plot_more_stuff(theta, node_num)
+        plot_more_stuff(theta, node_num,test_num)
 
 node_count = 0
 #get ip addr and port #
 ip_addr = '0.0.0.0'
-port = int(raw_input("what port# would you like to listen to? "))
+print int(sys.argv[1])
+if int(sys.argv[1]) > 999:
+    port = int(sys.argv[1])
+else:
+    print 'you entered a port number less than 1000'
+    port = int(raw_input("what port# would you like to listen to? "))
 print "listening on IP address: ", ip_addr
 print "listening on port: ", port
 #build socket using above user input
@@ -83,6 +93,7 @@ shutdown = 0
 timeout = None
 quick_list = []
 #wait for connection
+
 while node_count < 3 and shutdown == 0:
     try:
         print "number of nodes that have reported in so far: ",node_count
@@ -91,10 +102,11 @@ while node_count < 3 and shutdown == 0:
         #connection, address = serversocket.accept()
         data = serversocket.recv(128)
         quick_list.append(data)
+        print data
         node_count +=1
         print timeout
         if timeout == None:
-                timeout = 5
+                timeout = 1
     except socket.timeout:
         print "no other nodes reported gunshots in a logical amount of time"
         break

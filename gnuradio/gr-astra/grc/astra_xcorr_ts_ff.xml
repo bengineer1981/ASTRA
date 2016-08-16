@@ -5,13 +5,19 @@
   <key>astra_xcorr_ts_ff</key>
   <category>astra</category>
   <import>import astra</import>
-  <make>astra.xcorr_ts_ff($samp_window,$samp_rate,$node_number,$ip_address,$port_num,$center_mic_offset,$mic_distance)</make>
+  <make>astra.xcorr_ts_ff($samp_window,$samp_rate,$node_number,$ip_address,$port_num,$center_mic_offset,$mic_distance,$test_number)</make>
 
   <param>
     <name>node number</name>
     <key>node_number</key>
 	<value>1</value>
     <type>int</type>
+  </param>
+  <param>
+    <name>test number</name>
+    <key>test_number</key>
+	<value>gun_type.distance.angle.test_number</value>
+    <type>string</type>
   </param>
   <param>
     <name>IP address</name>

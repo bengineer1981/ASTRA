@@ -30,7 +30,7 @@ class xcorr_ts_ff(gr.sync_block):
     """
     docstring for block xcorr_ts_ff
     """
-    def __init__(self,samp_window,samp_rate,node_number,ip_addr,port_num,center_mic_offset,mic_distance):
+    def __init__(self,samp_window,samp_rate,node_number,ip_addr,port_num,center_mic_offset,mic_distance,test_number):
         gr.sync_block.__init__(self,
             name="xcorr_ts_ff",
             in_sig=[numpy.float32,numpy.float32,numpy.float32,numpy.float32,numpy.float32],
@@ -51,11 +51,12 @@ class xcorr_ts_ff(gr.sync_block):
         self.captured_samps3 = []
         self.captured_samps4 = []
         self.capturing = 0
-        self.out_msg = [0,0,node_number] # [timestamp,angle]
+        self.out_msg = [0,0,node_number,test_number] # [timestamp,angle]
         self.ip_address = ip_addr
         self.port_num = port_num
         self.center_mic_offset = center_mic_offset
         self.mic_distance = mic_distance
+        self.test_number = test_number
 
     # def tracker(self, trig_in,in1,in2,in3,in4):
     #     if len(self.trig_in_tracker) == 0:
@@ -217,16 +218,16 @@ class xcorr_ts_ff(gr.sync_block):
             data2 = self.captured_samps2
             data3 = self.captured_samps3
             data4 = self.captured_samps4
-            with open('/home/ben/Desktop/senior_design/gnuradio/data_files/in1file.csv','wb') as f1:
+            with open('/home/ben/Desktop/senior_design/gnuradio/data_files/in1file%s.csv' % self.test_number,'wb') as f1:
                 writer = csv.writer(f1)
                 writer.writerow(data1)
-            with open('/home/ben/Desktop/senior_design/gnuradio/data_files/in2file.csv','wb') as f2:
+            with open('/home/ben/Desktop/senior_design/gnuradio/data_files/in2file%s.csv' % self.test_number,'wb') as f2:
                 writer = csv.writer(f2)
                 writer.writerow(data2)
-            with open('/home/ben/Desktop/senior_design/gnuradio/data_files/in3file.csv','wb') as f3:
+            with open('/home/ben/Desktop/senior_design/gnuradio/data_files/in3file%s.csv' % self.test_number,'wb') as f3:
                 writer = csv.writer(f3)
                 writer.writerow(data3)
-            with open('/home/ben/Desktop/senior_design/gnuradio/data_files/in4file.csv','wb') as f4:
+            with open('/home/ben/Desktop/senior_design/gnuradio/data_files/in4file%s.csv' % self.test_number,'wb') as f4:
                 writer = csv.writer(f4)
                 writer.writerow(data4)
             self.capturing = 0
@@ -241,10 +242,11 @@ class xcorr_ts_ff(gr.sync_block):
     def udp_send(self,msg):
         clientsocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         clientsocket.connect((self.ip_address, self.port_num))
-        msg = str(msg[0]),str(msg[1]),str(msg[2])
+        msg = str(msg[0]),str(msg[1]),str(msg[2]),str(msg[3])
         msg = ','.join(msg)
         print 'message being sent to server',msg
         clientsocket.send(msg)
+        clientsocket.close()
 
         # clientsocket.send(',')
         # clientsocket.send(str(msg[1]))
@@ -302,6 +304,8 @@ class xcorr_ts_ff(gr.sync_block):
             self.capture(in1,in2,in3,in4)
             print 'sending message to server'
             self.udp_send(self.out_msg)
+            h = 0
+            trig_index = 0
         out[:] = trig_in
 
         return len(output_items[0])

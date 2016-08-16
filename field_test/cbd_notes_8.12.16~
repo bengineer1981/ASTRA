@@ -1,0 +1,4 @@
+test #5 xcorr results were bad, therefore produced inaccurate results. simple repeat of test got good result
+several failed attempts with shot position 8, calculating slightly larger length (0.505meters) vs actual 0.5 meters
+shot 2 increased distance to about 80ft (first was about 45)
+for shot 4 increased mic distance to 0.5056

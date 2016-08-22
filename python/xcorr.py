@@ -240,7 +240,7 @@ def plot_more_stuff(theta):
 #--------------------MAIN------------------------#
 ##################################################
 
-
+print ('test number example is: AR15.50m.120deg.shot1')
 test_number = raw_input('enter test number to analyze: ')
 mic_dist = float(raw_input('enter mic_dist: '))
 ins = get_streams_from_files(test_number)

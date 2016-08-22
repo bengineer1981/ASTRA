@@ -345,6 +345,10 @@
       <value>center_mic_offset</value>
     </param>
     <param>
+      <key>mic_distance</key>
+      <value>mic_distance</value>
+    </param>
+    <param>
       <key>node_number</key>
       <value>2</value>
     </param>
@@ -359,6 +363,10 @@
     <param>
       <key>samp_window</key>
       <value>5000</value>
+    </param>
+    <param>
+      <key>test_number</key>
+      <value>gun_type.distance.angle.test_number</value>
     </param>
   </block>
   <block>
@@ -703,7 +711,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(976, 705)</value>
+      <value>(1056, 705)</value>
     </param>
     <param>
       <key>_rotation</key>

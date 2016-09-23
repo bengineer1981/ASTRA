@@ -4,11 +4,17 @@
   <key>astra_peak_detect_ff</key>
   <category>astra</category>
   <import>import astra</import>
-  <make>astra.peak_detect_ff($thresh)</make>
+  <make>astra.peak_detect_ff($percent,$window_size)</make>
   <param>
-    <name>threshold</name>
-    <key>thresh</key>
+    <name>percent of average</name>
+    <key>percent</key>
 	<value>100</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>window size</name>
+    <key>window_size</key>
+	<value>1000</value>
     <type>int</type>
   </param>
   <sink>

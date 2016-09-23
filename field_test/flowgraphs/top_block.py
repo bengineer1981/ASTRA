@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Sat Aug 20 16:35:59 2016
+# Generated: Tue Sep  6 21:53:29 2016
 ##################################################
 
 if __name__ == '__main__':
@@ -111,7 +111,7 @@ class top_block(gr.top_block, Qt.QWidget):
         self.blocks_null_sink_0_1 = blocks.null_sink(gr.sizeof_float*1)
         self.blocks_null_sink_0_0 = blocks.null_sink(gr.sizeof_float*1)
         self.blocks_null_sink_0 = blocks.null_sink(gr.sizeof_float*1)
-        self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_float*1, "/home/ben/Desktop/senior_design/field_test/audio_recordings/22cal.50m", False)
+        self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_float*1, "/home/ben/Desktop/senior_design/field_test/audio_recordings/old/pulse", False)
         self.blocks_file_sink_0.set_unbuffered(False)
         self.audio_source_0 = audio.source(samp_rate, "hw:2,0", True)
 

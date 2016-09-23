@@ -24,6 +24,7 @@ from gnuradio import gr
 import time
 import math
 import socket
+import sys
 import matplotlib.pyplot as plt
 
 class xcorr_ts_ff(gr.sync_block):
@@ -240,9 +241,13 @@ class xcorr_ts_ff(gr.sync_block):
             "something i didn't think of in capture function"
 
     def udp_send(self,msg):
+        filename = "/home/ben/Desktop/senior_design/python/gps.txt"
+        f = open(filename, 'r')
+        gps = f.read()
+        msg.append(gps)
         clientsocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         clientsocket.connect((self.ip_address, self.port_num))
-        msg = str(msg[0]),str(msg[1]),str(msg[2]),str(msg[3])
+        msg = str(msg[0]),str(msg[1]),str(msg[2]),str(msg[3]),str(msg[4])
         msg = ','.join(msg)
         print 'message being sent to server',msg
         clientsocket.send(msg)

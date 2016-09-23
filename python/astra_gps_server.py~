@@ -11,7 +11,6 @@ import os
 
 def reformat(msg):
 	splitline= msg.split(',')#splits the line when a comma is read
-	filename = "/home/ben/Desktop/gps.txt"
 	if splitline[0] == '$GPGGA':#if line begins with $GPGGA
 		time = splitline[1]#information we we wish to extract
 		latitude= splitline[2]#line number is the order the data is written in the GPGGA line
@@ -26,8 +25,11 @@ def reformat(msg):
 
 #get ip addr and port #
 ip_addr = '0.0.0.0'
-print int(sys.argv[1])
-if int(sys.argv[1]) > 999:
+print len(sys.argv)
+if len(sys.argv) == 1:
+	print 'you didnt type a port number in when you ran the script'
+	port = int(raw_input("what port# would you like to listen to?"))
+elif int(sys.argv[1]) < 999:
     port = int(sys.argv[1])
 else:
     print 'you entered a port number less than 1000'

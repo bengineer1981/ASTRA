@@ -25,8 +25,11 @@ def reformat(msg):
 
 #get ip addr and port #
 ip_addr = '0.0.0.0'
-print int(sys.argv[1])
-if int(sys.argv[1]) > 999:
+print len(sys.argv)
+if len(sys.argv) == 1:
+	print 'you didnt type a port number argument when you ran the script'
+	port = int(raw_input("what port# would you like to listen to?"))
+elif int(sys.argv[1]) < 999:
     port = int(sys.argv[1])
 else:
     print 'you entered a port number less than 1000'

@@ -1,14 +1,14 @@
 addpath("/home/ben/gnuradio/gr-utils/octave")
 %             change file name here | |  (needs to be same as GR name)
 %                                   v v
-shot_bin = 10.*read_float_binary("audio_recordings/old/office_shot4");
+shot_bin = 30.*read_float_binary("audio_recordings/old/office_shot5");
 shot_lin = transpose(shot_bin);
 size(shot_bin)
-shot = shot_lin(55900:63000);
+shot = shot_lin(562500:570000);
 shot_match_filt = fliplr(shot);
 %     rename taps file here |  |  |
 %                           v  v  v       
-csvwrite("/home/ben/Desktop/senior_design/field_test/taps/old/office_shot4.txt",shot_match_filt)
+csvwrite("/home/ben/Desktop/senior_design/field_test/taps/old/office_shot5.txt",shot_match_filt)
 shot(1:4)
 shot_match_filt(1:4)
 figure(1)

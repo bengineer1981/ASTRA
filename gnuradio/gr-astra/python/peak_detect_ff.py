@@ -33,6 +33,7 @@ class peak_detect_ff(gr.sync_block):
         self.limiter = 1
         self.init_avg = 1
         self.avg_compare = []
+        self.potential_max = 0
         gr.sync_block.__init__(self,
             name="peak_detect_ff",
             in_sig=[numpy.float32],
@@ -65,10 +66,11 @@ class peak_detect_ff(gr.sync_block):
                     #print "avg_compare delta: ",delta
             #if self.init_avg == 0:
                     if self.avg_compare[0] > self.avg_compare[1]*self.percent:# and self.limiter ==1:
-                        print "difference of avg values is: ", delta
-                        print "avg_compare[1] * self.percent = ",(self.avg_compare[1]*self.percent)
-                        print "thresh exceeded, val is: ",val
+                        self.potential_max = self.avg_compare[0]
+                        print "thresh potentially exceeded with potential max: ",self.potential_max
+                        print "thresh is avg_compare[1] * self.percent = ",(self.avg_compare[1]*self.percent)
                         output_items[0][h] = 1
+
                 self.window = []
                 self.init_avg = 0
                     #self.limiter = 0

@@ -21,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="xcorr_ts_ff.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="xcorr_ts_ff.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xcorr_ts_ff.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="258" column="40" selection-start-line="258" selection-start-column="40" selection-end-line="258" selection-end-column="40" />
+            <state relative-caret-position="329">
+              <caret line="266" column="29" selection-start-line="266" selection-start-column="29" selection-end-line="266" selection-end-column="29" />
               <folding>
                 <element signature="e#795#805#0" expanded="true" />
                 <element signature="e#2129#2174#0" expanded="false" />
@@ -37,8 +37,8 @@
       <file leaf-file-name="peak_detect_ff.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/peak_detect_ff.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="631">
-              <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+            <state relative-caret-position="803">
+              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
               <folding>
                 <element signature="e#796#808#0" expanded="true" />
               </folding>
@@ -46,10 +46,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="astra_udp_server.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="astra_udp_server.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../../python/astra_udp_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="936">
+            <state relative-caret-position="288">
               <caret line="79" column="22" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
               <folding />
             </state>
@@ -77,15 +77,15 @@
         <option value="$PROJECT_DIR$/../../../python_code/udp_client.py" />
         <option value="$PROJECT_DIR$/../../../python/astra_udp_server.py" />
         <option value="$PROJECT_DIR$/../../../python/xcorr.py" />
-        <option value="$PROJECT_DIR$/peak_detect_ff.py" />
         <option value="$PROJECT_DIR$/xcorr_ts_ff.py" />
+        <option value="$PROJECT_DIR$/peak_detect_ff.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
     <option name="y" value="24" />
-    <option name="width" value="1121" />
+    <option name="width" value="1111" />
     <option name="height" value="1176" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -113,6 +113,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -121,20 +122,23 @@
               <option name="myItemId" value="python" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 2.7.6 (/usr/bin/python2.7) &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="python" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="python" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -143,7 +147,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/peak_detect_ff.py" />
     <property name="SearchEverywhereHistoryKey" value="trigger_index&#9;null&#9;null" />
   </component>
-  <component name="RunManager" selected="Python.xcorr">
+  <component name="RunManager" selected="Python.peak_detect_ff">
     <configuration default="false" name="xcorr" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -174,23 +178,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="python" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../python_code/udp_server.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="udp_client" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../python_code" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../python_code/udp_client.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -232,6 +219,23 @@
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="peak_detect_ff" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="python" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/peak_detect_ff.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -371,17 +375,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.xcorr" />
       <item index="1" class="java.lang.String" itemvalue="Python.udp_server" />
-      <item index="2" class="java.lang.String" itemvalue="Python.udp_client" />
-      <item index="3" class="java.lang.String" itemvalue="Python.xcorr (1)" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in python" />
+      <item index="2" class="java.lang.String" itemvalue="Python.xcorr (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in python" />
+      <item index="4" class="java.lang.String" itemvalue="Python.peak_detect_ff" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.xcorr" />
-        <item index="1" class="java.lang.String" itemvalue="Python.xcorr (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.udp_server" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in python" />
-        <item index="4" class="java.lang.String" itemvalue="Python.udp_client" />
+        <item index="0" class="java.lang.String" itemvalue="Python.peak_detect_ff" />
+        <item index="1" class="java.lang.String" itemvalue="Python.xcorr" />
+        <item index="2" class="java.lang.String" itemvalue="Python.xcorr (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python.udp_server" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in python" />
       </list>
     </recent_temporary>
   </component>
@@ -407,10 +411,10 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1121" height="1176" extended-state="4" />
+    <frame x="65" y="24" width="1111" height="1176" extended-state="4" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18911687" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1890189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33860466" sideWeight="0.5031447" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -774,32 +778,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../python/astra_udp_server.py">
+    <entry file="file://$PROJECT_DIR$/xcorr_ts_ff.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="79" column="22" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
-          <folding />
+        <state relative-caret-position="329">
+          <caret line="266" column="29" selection-start-line="266" selection-start-column="29" selection-end-line="266" selection-end-column="29" />
+          <folding>
+            <element signature="e#795#805#0" expanded="true" />
+            <element signature="e#2129#2174#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/peak_detect_ff.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+        <state relative-caret-position="803">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
           <folding>
             <element signature="e#796#808#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xcorr_ts_ff.py">
+    <entry file="file://$PROJECT_DIR$/../../../python/astra_udp_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="258" column="40" selection-start-line="258" selection-start-column="40" selection-end-line="258" selection-end-column="40" />
-          <folding>
-            <element signature="e#795#805#0" expanded="true" />
-            <element signature="e#2129#2174#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="288">
+          <caret line="79" column="22" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>

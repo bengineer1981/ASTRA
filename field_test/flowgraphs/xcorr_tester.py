@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Xcorr Tester
-# Generated: Thu Oct  6 22:44:23 2016
+# Generated: Fri Oct  7 21:30:23 2016
 ##################################################
 
 if __name__ == '__main__':
@@ -63,9 +63,9 @@ class xcorr_tester(gr.top_block, Qt.QWidget):
         self.samp_rate = samp_rate = 44100
         self.mic_distance = mic_distance = .5
         self.dec = dec = 1
-        self.d3 = d3 = 0
-        self.d2 = d2 = 0
-        self.d1 = d1 = 0
+        self.d3 = d3 = 32
+        self.d2 = d2 = 32
+        self.d1 = d1 = -64
         self.center_mic_offset = center_mic_offset = 1024*10
 
         ##################################################

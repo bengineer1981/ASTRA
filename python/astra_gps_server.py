@@ -25,11 +25,11 @@ def reformat(msg):
 
 #get ip addr and port #
 ip_addr = '0.0.0.0'
-print len(sys.argv)
+msg_num = 1
 if len(sys.argv) == 1:
 	print 'you didnt type a port number argument when you ran the script'
 	port = int(raw_input("what port# would you like to listen to?"))
-elif int(sys.argv[1]) < 999:
+elif int(sys.argv[1]) > 999:
     port = int(sys.argv[1])
 else:
     print 'you entered a port number less than 1000'
@@ -42,6 +42,8 @@ serversocket.bind((ip_addr, port))
 #serversocket.listen(5) # become a server socket, maximum 5 connections
 while 1:
 	msg = serversocket.recv(128)
+	print 'msg #: %d' % msg_num 
+	msg_num += 1
 	reformat(msg)
 
 

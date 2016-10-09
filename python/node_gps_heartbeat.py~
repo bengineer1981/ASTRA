@@ -4,24 +4,25 @@ import serial #python package for reading serial ports
 import time
 
 port = int(raw_input('enter UDP port # (generally use 5557): '))
+ip_addr = (raw_input('enter ip address (ex. 10.0.0.2): '))
 type_of_test = int(raw_input('run for real, press 1, run dummy press 2: '))
 print type(type_of_test)
 
-if type_of_test ==1:
-	ser=serial.Serial( '/dev/ttyUSB0', 4800, timeout = 5)#creates serial vairable and sets port to read from and speed to read from port. Timeout prevents program from waiting more than X seconds in case of infinite loop
-else:
-	print "running dummy GPS value of: '$GPGGA,205704.000,3849.3529,N,07701.5355,W,1,08,1.2,10.0,M,-33.5,M,,0000*54'"
+#if type_of_test ==1:
+#	ser=serial.Serial( '/dev/ttyUSB0', 4800, timeout = 5)#creates serial vairable and sets port to read from and speed to read from port. Timeout prevents program from waiting more than X seconds in case of infinite loop
+#else:
+#	print "running dummy GPS value of: '$GPGGA,205704.000,3849.3529,N,07701.5355,W,1,08,1.2,10.0,M,-33.5,M,,0000*54'"
+clientsocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+clientsocket.connect((ip_addr,port))
 
-ip_addr = '10.0.5.57'
 msg_num = 1
 while 1:
-	if type_of_test == 1:
-		line = ser.readline()#reads a line of data from port
-	else:
-		line = '$GPGGA,205704.000,3849.3529,N,07701.5355,W,1,08,1.2,10.0,M,-33.5,M,,0000*54'
+#	if type_of_test == 1:
+#		line = ser.readline()#reads a line of data from port
+#	else:
+	line = '$GPGGA,205704.000,3849.3529,N,07701.5355,W,1,08,1.2,10.0,M,-33.5,M,,0000*54\n'
 	splitline= line.split(',')#splits the line when a comma is read
-	clientsocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-	clientsocket.connect((ip_addr,port))
+
 	msg = line
 	print "running on ip: %s \nrunning on port: %s" % (ip_addr,port)
 	filename = "gps.txt"
@@ -47,7 +48,7 @@ while 1:
 			print 'this is a real message # %d' % msg_num
 			msg_num+=1
 		clientsocket.send(msg)
-		clientsocket.close()
+		#clientsocket.close()
 	else:
 		clientsocket.close()
 		#break

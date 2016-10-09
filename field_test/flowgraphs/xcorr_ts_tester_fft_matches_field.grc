@@ -329,7 +329,7 @@
     </param>
     <param>
       <key>ip_address</key>
-      <value>0.0.0.0</value>
+      <value>10.0.0.2</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -365,7 +365,7 @@
     </param>
     <param>
       <key>test_number</key>
-      <value>office.testing.10.06.16</value>
+      <value>school.testing.10.08.16</value>
     </param>
   </block>
   <block>

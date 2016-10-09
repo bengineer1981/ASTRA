@@ -24,6 +24,7 @@ from gnuradio import gr
 import time
 import math
 import socket
+import serial
 import sys
 import matplotlib.pyplot as plt
 
@@ -240,23 +241,24 @@ class xcorr_ts_ff(gr.sync_block):
         else:
             "something i didn't think of in capture function"
 
-    def udp_send(self,msg):
+    def message_write(self,msg):
         filename = "/home/ben/Desktop/senior_design/python/gps.txt"
         f = open(filename, 'r')
         gps = f.read()
+        f.close()
         msg.append(gps)
-        clientsocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        clientsocket.connect((self.ip_address, self.port_num))
         msg = str(msg[0]),str(msg[1]),str(msg[2]),str(msg[3]),str(msg[4])
         msg = ','.join(msg)
-        print 'message being sent to server',msg
-        clientsocket.send(msg)
-        clientsocket.close()
+        detection_file = '/home/ben/Desktop/senior_design/python/detection.txt'
+        d = open(detection_file,'w')
+        d.write(msg)
+        print 'this message was just written to a file', msg
+        d.close()
+        # clientsocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        # clientsocket.connect((self.ip_address, self.port_num))
+        # clientsocket.send(msg+'n')
+        #clientsocket.close()
 
-        # clientsocket.send(',')
-        # clientsocket.send(str(msg[1]))
-        # clientsocket.send(',')
-        # clientsocket.send(str(msg[2]))
 
     def work(self, input_items, output_items):
         trig_in = input_items[0]
@@ -307,8 +309,8 @@ class xcorr_ts_ff(gr.sync_block):
         elif self.capturing == 1 and self.total_capture_len == 0:
             print 'capturing flag still high, but total capture length == 0'
             self.capture(in1,in2,in3,in4)
-            print 'sending message to server'
-            self.udp_send(self.out_msg)
+            print 'writing message to file'
+            self.message_write(self.out_msg)
             h = 0
             trig_index = 0
         out[:] = trig_in

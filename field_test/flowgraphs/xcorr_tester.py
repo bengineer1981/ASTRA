@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Xcorr Tester
-# Generated: Fri Oct  7 21:30:23 2016
+# Generated: Sat Oct  8 23:57:29 2016
 ##################################################
 
 if __name__ == '__main__':
@@ -219,7 +219,7 @@ class xcorr_tester(gr.top_block, Qt.QWidget):
         self.blocks_delay_0 = blocks.delay(gr.sizeof_float*1, center_mic_offset)
         self.audio_source_0 = audio.source(samp_rate, "plughw:2,0", False)
         self.audio_sink_0_0 = audio.sink(samp_rate, "plughw:0,0", True)
-        self.astra_xcorr_ts_ff_0 = astra.xcorr_ts_ff(15000,samp_rate,1,"0.0.0.0",5555,center_mic_offset,mic_distance,"office.testing.10.06.16")
+        self.astra_xcorr_ts_ff_0 = astra.xcorr_ts_ff(15000,samp_rate,1,"10.0.0.2",5555,center_mic_offset,mic_distance,"school.testing.10.08.16")
 
         ##################################################
         # Connections

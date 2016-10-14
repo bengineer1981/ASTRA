@@ -17,7 +17,7 @@ if len(sys.argv) < 2:
 	real_or_fake = int(raw_input('do you want real data or fake data?\n press 1 for real, press 2 for fake'))
 else:
 	port = int(sys.argv[1])
-	ip_addr = sys.argv[2]
+	ip_addr = str(sys.argv[2])
 	real_or_fake = int(sys.argv[3])
 n = 1
 
@@ -38,7 +38,7 @@ while 1:
 			longitude=splitline[4]
 			longDir=splitline[5]
 			print 'time: ',gps_time
-			print 'lat: ', latitude
+			print 'lat: %s latDir: %s' % latitude,latDir
 			print 'long: ', longitude
 			print 'message being sent to server'
 			socksend(msg)
@@ -48,5 +48,13 @@ while 1:
 		print 'sending fake GPS data to the server'
 		msg = '$GPGGA,205704.000,3849.3529,N,07701.5355,W,1,08,1.2,10.0,M,-33.5,M,,0000*54 MESSAGE #: '+str(n)+'\n'
 		time.sleep(1)
-		socksend(msg)
+		print port
+		print ip_addr
+		clientsocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+		print 'works 1'
+		#clientsocket.connect((ip_addr, port))
+		print 'works 2'
+		clientsocket.sendto(msg,(ip_addr, port))
+
+		#socksend(msg)
 		n+=1

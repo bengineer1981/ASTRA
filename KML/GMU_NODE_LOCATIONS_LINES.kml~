@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>KmlFile</name>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<color>ff0000aa</color>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/target.png</href>
+			</Icon>
+		</IconStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<color>ff0000aa</color>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/target.png</href>
+			</Icon>
+		</IconStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Folder>
+		<name>ASTRA (GMU)</name>
+		<Placemark>
+			<name>GMU Node3</name>
+			<LookAt>
+				<longitude>-77.10654917480554</longitude>
+				<latitude>38.88521007106477</latitude>
+				<altitude>0</altitude>
+				<heading>-1.684797936750797</heading>
+				<tilt>0</tilt>
+				<range>266.0961067510844</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-77.10638801565288,38.8845691509614,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>GMU Node2</name>
+			<LookAt>
+				<longitude>-77.10654917480554</longitude>
+				<latitude>38.88521007106477</latitude>
+				<altitude>0</altitude>
+				<heading>-1.684797936750797</heading>
+				<tilt>0</tilt>
+				<range>266.0961067510844</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-77.10758331983132,38.88480431935535,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>GMU Node1</name>
+			<LookAt>
+				<longitude>-77.10654917480554</longitude>
+				<latitude>38.88521007106477</latitude>
+				<altitude>0</altitude>
+				<heading>-1.684797936750797</heading>
+				<tilt>0</tilt>
+				<range>266.0961067510844</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-77.10719816506928,38.88541097824265,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>
+

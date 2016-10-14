@@ -5,14 +5,22 @@ import time
 import serial
 import sys
 import os
+import errno
+from socket import error as socket_error
 
 
 def socksend(msg):
-    clientsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    clientsocket.connect((ip_addr, port))
-    clientsocket.send(msg)
-print 'len sysargv'
-print len(sys.argv)
+    try:
+        clientsocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        #clientsocket.connect((ip_addr, port))
+        clientsocket.sendto(msg,(ip_addr, port))
+        return 1
+    except socket_error as serr:
+        if serr.errno != errno.ECONNREFUSED:
+            raise serr
+        print '***NO CONNECTION***'
+        return 0
+
 if len(sys.argv) < 5:
     port = int(raw_input('port number = '))
     ip_addr = raw_input('ip address = ')
@@ -23,6 +31,15 @@ else:
     ip_addr = sys.argv[2]
     node_number = int(sys.argv[3])
     real_or_fake = int(sys.argv[4])
+print '\n\n*************************'
+print "port: ",port
+print "ip address: ",ip_addr
+print "node number: ",node_number
+if real_or_fake ==1:
+    print "real data (option 1)"
+else:
+    print "fake data (option 2)"
+print '*************************\n'
 n = 1
 
 detect_filename = '/home/ben/Desktop/senior_design/python/detection.txt'
@@ -63,15 +80,18 @@ if real_or_fake == 1: #real
     print 'sending real detection data to server: \n'
     print str(msg)
 
-else:
+else: # 2 -->fake
     m = 1
     while m < 10:
-        print 'sending fake GPS data to the server'
         msg = str(time.time())+',,1,school.testing.10.08.16,$GPGGA,205704.000,3849.3529,N,07701.5355,W,1,08,1.2,10.0,M,-33.5,M,,0000*54'
         time.sleep(1)
-        socksend(msg)
-        n += 1
-        m += 1
+        x = socksend(msg)
+        if x == 1:
+            print 'sending fake GPS data to the server'
+            n += 1
+            m += 1
+        else:
+            print 'not sending data'
     print 'sending fake DETECTION data to the server'
     msg = str(time.time())+',5.40390060322,1,school.testing.10.08.16,$GPGGA,205704.000,3849.3529,N,07701.5355,W,1,08,1.2,10.0,M,-33.5,M,,0000*54'
     socksend(msg)

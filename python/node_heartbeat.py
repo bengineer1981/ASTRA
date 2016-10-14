@@ -11,9 +11,10 @@ from socket import error as socket_error
 
 def socksend(msg):
     try:
-        clientsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        clientsocket.connect((ip_addr, port))
-        clientsocket.send(msg)
+        clientsocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        #clientsocket.connect((ip_addr, port))
+		# uncomment .connect and change sendto(msg,ip,port) to send(msg)
+        clientsocket.sendto(msg,(ip_addr, port))
         return 1
     except socket_error as serr:
         if serr.errno != errno.ECONNREFUSED:

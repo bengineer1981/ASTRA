@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+	<Document>
+		<name>KmlFile</name>
+		<open>1</open>
+		<visibility>1</visibility>
+		<Style id="s_ylw-pushpin_hl0">
+			<IconStyle>
+				<scale>1</scale>
+	   			<Icon><href>http://maps.google.com/mapfiles/kml/shapes/target.png</href></Icon>
+			</IconStyle>
+		</Style>
+		<Style id="s_ylw-pushpin_hl0">
+			<IconStyle>
+				<scale>1</scale>
+	   			<Icon><href>http://maps.google.com/mapfiles/kml/shapes/target.png</href></Icon>
+			</IconStyle>
+		</Style>
+		<Style id="s_ylw-pushpin_hl0">
+			<IconStyle>
+				<scale>1</scale>
+	   			<Icon><href>http://maps.google.com/mapfiles/kml/shapes/target.png</href></Icon>
+			</IconStyle>
+		</Style>
+		<Folder id='PlotView'>
+            			<name>automate_test</name>
+            			<open>0</open><visibility>0</visibility>
+		<Placemark>
+                 			<name>node 1</name>
+                 			<styleUrl>#m_ylw-pushpin0</styleUrl>
+                 			<open>0</open><visibility>0</visibility>
+                 			<Point><coordinates>-77.1071981651,38.8854109782,0</coordinates></Point>
+                 		</Placemark>
+		<Placemark>
+                 			<name>node 2</name>
+                 			<styleUrl>#m_ylw-pushpin0</styleUrl>
+                 			<open>0</open><visibility>0</visibility>
+                 			<Point><coordinates>-77.1077252827,38.8845363083,0</coordinates></Point>
+                 		</Placemark>
+		<Placemark>
+                 			<name>node 3</name>
+                 			<styleUrl>#m_ylw-pushpin0</styleUrl>
+                 			<open>0</open><visibility>0</visibility>
+                 			<Point><coordinates>-77.1063880157,38.884569151,0</coordinates></Point>
+                 		</Placemark>
+			<Placemark> 
+            				<name>line 1</name> 
+            				<visibility>0</visibility> 
+            				<Style id="linestyleExample"> 
+            				<LineStyle> 
+            					<color>ff0000aa</color> 
+            					<width>5</width> 
+            				</LineStyle> 
+            				</Style> 
+            				<LineString><altitudeMode>absolute</altitudeMode><coordinates>-77.1071981651,38.8854109782,81,-77.408514654,37.8641906443,81</coordinates></LineString> 
+            			</Placemark>
+		</Folder>
+	</Document>
+</kml>
